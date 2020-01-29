@@ -1,0 +1,59 @@
+<%- include('includes/dashboard-taxibooking-navigation.ejs') %>
+    
+    <section id="features" class="services-area pt-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-title text-center mb-1">
+                        <div class="line m-auto"></div>
+                            <h3 class="title">
+                                Online Cab Booking
+                                <i class="fas h1 fa-taxi"></i>
+                            </h3>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <section id="features" class="services-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="card w-75">
+                    <div class="card-body">
+                        <%- include('partials/messages')  %>
+                        <form class="text-center border border-light" method="POST" action="/taxibooked">
+                            <i class="fas text-warning float-left h3 fa-user-friends"></i>
+                            <input type="text" required="required" id="booked_for" name="booked_for" class="form-control mb-4" placeholder="Cab Booked For">
+                            <!-- Email -->
+                            <i class="fas text-success h3 float-left fa-map-marker-alt"></i>
+                            <input type="text" required="required" id="cab_from" name="cab_from" class="form-control mb-4" placeholder="From">
+        
+                            <i class="fas text-danger h3 float-left fa-map-marker-alt"></i>
+                            <input type="text" required="required" id="cab_to" name="cab_to" class="form-control mb-4" placeholder="To">
+        
+                            <i class="fas fa-clock text-danger h3 float-left"></i>
+                            <input type="time" required="required" id="cab_timing" name="cab_timing" class="form-control mb-4">
+        
+                            <i class="fas fa-calendar-day text-success h3 float-left"></i>
+                            <input type="date" required="required" id="cab_date" name="cab_date" class="form-control mb-4">
+        
+                            <div class="form-group">
+                                <textarea class="form-control rounded-0" id="cab_message" name="cab_message" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+                                <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted float-left mb-2">
+                                    Optional
+                                </small>
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit">Send</button>
+                        </form>
+                    </div>
+                    
+                </div>
+                <!-- Default form contact -->
+                
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+   
+    <%- include('includes/home-footer.ejs') %>

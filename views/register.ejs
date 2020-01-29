@@ -1,0 +1,116 @@
+<div style="margin-top: 8%;" class="row">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body shadow">
+        <a href="/">
+            <i class="fas fa-home h2 float-right text-warning"></i>
+        </a>
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Register
+        </h1>
+        <%- include('partials/messages')  %>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <!-- <label for="name">Name</label> -->
+            <input
+              type="name"
+              id="name"
+              name="name"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              class="form-control"
+              required="required"
+              placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="department" id="department">
+              <option selected="" disabled="">Select Department</option>
+              <option value="CMOffice">Chairman Office</option>
+              <option value="VCMOffice">Vice-Chairman Office</option>
+              <option value="MSOffice">Member Secretary Office</option>
+              <option value="Policy-and-Academic-Planning-Bureau">Policy and Academic Planning Bureau</option>
+              <option value="MIC">MIC</option>
+              <option value="RIFD">Research, Institutional and Faculty Development (RIFD) Bureau</option>
+              <option value="Approval-Bureau">Approval Bureau</option>
+              <option value="Finance-Bureau">Finance Bureau</option>
+              <option value="Adminstration">Administration</option>
+              <option value="CMAT/GPAT-Cell">CMAT/GPAT Cell</option>
+              <option value="PMSSS-Cell">PMSSS Cell</option>
+              <option value="Skill-Development-Cell">Skill Development Cell</option>
+              <option value="SWAYAM-Project-Cell">SWAYAM Project Cell</option>
+              <option value="Grievance-Redressal-Cell">Grievance Redressal Cell</option>
+              <option value="Legal-Cell">Legal Cell</option>
+              <option value="Vigilance-Cell">Vigilance Cell</option>
+              <option value="NEQIP-Cell">NEQIP Cell</option>
+              <option value="Estate-Management-Cell">Estate Management Cell</option>
+              <option value="RTI-Cell">RTI Cell</option>
+              <option value="Internal-Audit-Cell">Internal Audit Cell</option>
+              <option value="Parliament-Cell">Parliament Cell</option>
+              <option value="Hindi-Cell">Hindi Cell</option>
+              <option value="Direct-Benefit-Transfer-(DBT)-Cell">Direct Benefit Transfer (DBT) Cell</option>
+              <option value="Newsletter">Newsletter</option>
+              <option value="Library">Library</option>
+              <option value="General-Office-Number">General Office Number</option>
+              <option value="E-Gov">E-Gov</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="role" id="role">
+              <option value="select" selected="" disabled="">Select Post</option>
+              <option value="Chairman">Chairman</option>
+              <option value="Vice-Chairman">Vice-Chairman</option>
+              <option value="Member Secretary">Member Secretary</option>
+              <option value="Bureau Heads/ Bureau Cell">Bureau Heads/ Bureau Cell</option>
+              <option value="Advisor I">Advisor I</option>
+              <option value="Advisor II">Advisor II</option>
+              <option value="Director">Director</option>
+              <option value="Deputy Director">Deputy Director</option>
+              <option value="Assistant Director">Assistant Director</option>
+              <option value="Employee">Employee</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!-- <label for="email">Email</label> -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$" 
+              class="form-control"
+              required="required"
+              placeholder="Enter AICTE Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Password</label> -->
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              required="required"
+              placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password2">Confirm Password</label> -->
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              class="form-control"
+              required="required"
+              placeholder="Confirm Password"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Register
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+      </div>
+    </div>
+  </div>

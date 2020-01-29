@@ -1,0 +1,212 @@
+<%- include('includes/dashboard-taxibooking-navigation.ejs') %>
+    
+<%- include('includes/airtickets_navigation.ejs') %>
+
+
+    <section id="features" class="services-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="card w-75">
+                    <div class="card-body">
+                        <%- include('partials/messages')  %>
+                        <div class="form-airticket">
+                            <form class="text-center border border-light" method="POST" action="/airticketbookedroundway">
+                                <i class="fas text-primary float-left h3 fa-handshake"></i>
+                                <input type="text" required="required" id="purpose_meeting" name="purpose_meeting" class="form-control mb-4" placeholder="Purpose of Meeting">
+
+                                <i class="fas text-warning float-left h3 fa-user-friends"></i>
+                                <input type="text" required="required" id="booked_for" name="booked_for" class="form-control mb-4" placeholder="Tickets Booked For">
+    
+                                <i class="fas text-primary float-left h3 fa-envelope"></i>
+                                <input type="text" required="required" id="booked_for_email" name="booked_for_email" class="form-control mb-4" placeholder="E-mail">
+    
+                                <i class="fas text-secondary float-left h3 fa-phone"></i>
+                                <input type="text" required="required" id="booked_for_phone" name="booked_for_phone" class="form-control mb-4" placeholder="Phone No.">
+                                <!-- Email -->
+    
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas text-success h3 float-left fa-map-marker-alt"></i><span class="float-left ml-2">From</span>
+                                        <select required="required" name="from_state_name" id="from_state_name" class="form-control mb-4">
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                            <option value="Daman and Diu">Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fas text-dark h3 float-left fa-city"></i>
+                                        <input type="text" required="required" id="from_city_name" name="from_city_name" class="form-control mb-4" placeholder="City Name">
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas text-danger h3 float-left fa-map-marker-alt"></i><span class="float-left ml-2">To</span>
+                                        <select required="required" name="to_state_name" id="to_state_name" class="form-control mb-4">
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                            <option value="Daman and Diu">Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fas text-dark h3 float-left fa-city"></i>
+                                        <input type="text" required="required" id="to_city_name" name="to_city_name" class="form-control mb-4" placeholder="City Name">
+                                    </div>
+                                </div>
+    
+                                
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas text-warning h3 float-left fa-plane-departure"></i><span class="float-left ml-2">Prefered Departure Time</span>
+                                        <input type="time" required="required" name="departure_time" id="departure_time" class="form-control mb-4">
+                                    </div>
+                                </div>
+                                
+            
+                                
+
+
+    
+                                <i class="fas fa-calendar-day text-success h3 float-left"></i><span class="float-left ml-2">Departure Date</span>
+                                <input type="date" required="required" name="departure_date" id="departure_date" class="form-control mb-4">
+    
+                                <i class="fas fa-calendar-day text-info h3 float-left"></i><span class="float-left ml-2">Return Date</span>
+                                <input type="date" required="required" name="arrival_date" id="arrival_date" class="form-control mb-4">
+    
+                                <i class="fas fa-file-alt text-secondary h3 float-left"></i><span class="float-left ml-2">Frequent Flying Number</span>
+                                <input type="number" name="frequent_flying_number" id="frequent_flying_number" class="form-control">
+                                <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted float-left mb-2">
+                                    Optional
+                                </small>
+    
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="air_tickets_roundway_upload_btn"
+                                    aria-describedby="inputGroupFileAddon01">
+                                    <label class="custom-file-label" id="uploadNoteSheet" for="inputGroupFile01">Attach the Notesheet</label>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group mt-4">
+                                            <i class="fas text-warning h3 float-left fa-plane"></i><span class="float-left ml-2">Prefered Flight Departure</span>
+                                            <select required="required" name="prefered_airlines_departure" id="prefered_airlines_departure" class="form-control mb-4">
+                                                <option selected value="Air India">Air India</option>
+                                                <option value="Air Asia India">Air Asia India</option>
+                                                <option value="Indigo Airlines">Indigo Airlines</option>
+                                                <option value="Vistara Airlines">Vistara Airlines</option>
+                                                <option value="Spice Jet Airlines">Spice Jet Airlines</option>
+                                                <option value="Jet Airways">Jet Airways</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group mt-4">
+                                            <i class="fas text-info h3 float-left fa-plane"></i><span class="float-left ml-2">Prefered Flight Returning</span>
+                                            <select required="required" name="prefered_airlines_arrival" id="prefered_airlines_arrival" class="form-control mb-4">
+                                                <option selected value="Air India">Air India</option>
+                                                <option value="Air Asia India">Air Asia India</option>
+                                                <option value="Indigo Airlines">Indigo Airlines</option>
+                                                <option value="Vistara Airlines">Vistara Airlines</option>
+                                                <option value="Spice Jet Airlines">Spice Jet Airlines</option>
+                                                <option value="Jet Airways">Jet Airways</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted float-left mb-2">
+                                    Incase of travelling by another airlines please specify the reason in Message Box.
+                                </small>
+            
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control rounded-0" id="flight_message" name="flight_message" rows="3" placeholder="Message"></textarea>
+                                </div>
+    
+                                <input type="hidden" id="file_upload_url_path" name="file_upload_url_path" value="">
+                                
+                                <button id="airticket_booking-btn" class="btn btn-primary btn-block" type="submit">Submit</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!-- Default form contact -->
+                
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+   
+    <%- include('includes/home-footer.ejs') %>

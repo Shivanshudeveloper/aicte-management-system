@@ -1,0 +1,98 @@
+<%- include('includes/dashboard-taxibooking-navigation.ejs') %>
+    
+<%- include('includes/airtickets_navigation.ejs') %>
+    
+
+    <section id="features" class="services-area">
+        
+        <div class="container mt-2">
+            <div class="row justify-content-center">
+                <% allTicketsOneWay.forEach((ticketsOneWay) => { %>
+                    <div class="card w-75 mt-2">
+                        <div class="card-body">
+                            <h5>One Way</h5>
+                            <p class="h3 text-center text-primary">
+                                <%= ticketsOneWay.from_state_name %> <i class="fas fa-arrow-right"></i> <%= ticketsOneWay.to_state_name %>
+                            </p>
+
+                            <a class="card-link float-right" target="_blank" href="<%= ticketsOneWay.file_upload_url_path %>">
+                                <i class="fas mr-1 fa-download"></i>Attached File
+                            </a>
+
+                            <h5 class="card-title mb-4">
+                                <%= ticketsOneWay.purpose_meeting %>
+                            </h5>
+                            <p class="font-weight-bold text-dark">
+                                Departure On: <%= ticketsOneWay.departure_date.toDateString() %> <br> Prefered Time: <%= ticketsOneWay.departure_time %> <br> Arrival On: <%= ticketsOneWay.arrival_date.toDateString() %>
+                            </p>
+                            <p class="font-weight-bold text-secondary">
+                                Frequent Flying Number: <%= ticketsOneWay.frequent_flying_number %>
+                            </p>
+                            <p class="card-text mt-3">
+                                <%= ticketsOneWay.flight_message %>
+                            </p>
+                            <center>
+                                <form action="/deleteAirTicket/<%= ticketsOneWay.id %>" id="deleteTicketForm" method="post">
+                                    <button type="button" id="deleteTicket-btn" class="btn w-50 btn-outline-danger mt-2">
+                                        <i class="fas fa-trash"></i>
+                                        Delete Request
+                                    </button>
+                                </form>
+                            </center>
+                        </div>
+                    </div>
+                <% }); %>
+                    <hr>
+                    
+                <% allTicketsRoundWay.forEach((ticketsRoundWay) => { %>
+                    <div class="card w-75 mt-2">
+                        <div class="card-body">
+                            <h5>Round Way</h5>
+                            <p class="h3 text-center text-primary">
+                                <%= ticketsRoundWay.from_state_name %> <i class="fas fa-arrows-alt-h"></i> <%= ticketsRoundWay.to_state_name %>
+                            </p>
+
+                            <a class="card-link float-right" href="<%= ticketsRoundWay.file_upload_url_path %>">
+                                <i class="fas mr-1 fa-download"></i>Attached File
+                            </a>
+
+                            <h5 class="card-title">
+                                <%= ticketsRoundWay.purpose_meeting %>
+                            </h5>
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-bold text-dark">
+                                        <%= ticketsRoundWay.from_state_name %> <br>
+                                        Departure On: <%= ticketsRoundWay.departure_date.toDateString() %> <br> Prefered Departure Time: <%= ticketsRoundWay.departure_time %> <br> Prefered Departure By Airline: <%= ticketsRoundWay.prefered_airlines_departure %>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-bold text-dark">
+                                        <%= ticketsRoundWay.to_state_name %> <br>
+                                        Returning On: <%= ticketsRoundWay.arrival_date.toDateString() %><br>Prefered Returning By Airline: <%= ticketsRoundWay.prefered_airlines_arrival %>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="card-text mt-2">
+                                <%= ticketsRoundWay.flight_message %> <br>
+                            </p>
+                            <center>
+                                <form action="/deleteAirTicketRoundWay/<%= ticketsRoundWay.id %>" id="deleteTicketForm" method="post">
+                                    <button type="button" id="deleteTicket-btn" class="btn w-50 btn-outline-danger mt-2">
+                                        <i class="fas fa-trash"></i>
+                                        Delete Request
+                                    </button>
+                                </form>
+                            </center>
+                        </div>
+                    </div>
+                <% }); %>
+
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+   
+    <%- include('includes/home-footer.ejs') %>
